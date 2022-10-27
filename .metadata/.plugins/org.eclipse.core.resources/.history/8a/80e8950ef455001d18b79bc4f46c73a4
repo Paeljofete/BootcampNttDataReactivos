@@ -1,0 +1,57 @@
+package com.example.webFluxMicro;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import reactor.core.publisher.Flux;
+
+@RestController
+public class PersonListController {
+
+	@Autowired
+	PersonService personService;
+	
+	@GetMapping("/person-list1")
+	public Flux<Person> personList1(){
+		
+		Flux<Person> flux = Flux.just(new Person("Héctor", "FerSan", 6)).delayElements(Duration.ofSeconds(2));
+
+		return flux;
+		
+	}
+	
+	@GetMapping("/person-list2")
+	public Flux<Person> personList2(){
+		
+		Flux<Person> flux = Flux.just(new Person("Beren", "San", 3)).delayElements(Duration.ofSeconds(2));
+
+		return flux;
+		
+	}
+	
+	@GetMapping("/person-list3")
+	public Flux<Person> personList3(){
+		
+		Flux<Person> flux = Flux.just(new Person("Ciro", "Fer", 1)).delayElements(Duration.ofSeconds(2));
+		
+		return flux;
+	}
+	
+	@GetMapping("/person-list4")
+	public Flux<Person> personList4(){
+		
+		Flux<Person> flux = Flux.just(new Person("Tuko", "Can", 7)).delayElements(Duration.ofSeconds(2));
+		
+		return flux;
+	}
+	
+	@GetMapping("/person-list")
+	public String personList(final Model model) {
+		final Flux<Person> personList = personService.allPersons();
+		
+		model.addAllAttributes("personList", personList);
+		return "personList";
+	}
+}

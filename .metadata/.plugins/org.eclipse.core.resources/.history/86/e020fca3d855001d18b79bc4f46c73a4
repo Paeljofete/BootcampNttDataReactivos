@@ -1,0 +1,15 @@
+package com.nttdata.ejercicioRxJava;
+
+import io.reactivex.Observable;
+
+/**
+ * Prueba RxJava
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Observable<String> messageSender = Observable.just("Mensaje1", "Mensaje2", "Mensaje3");
+    }
+}

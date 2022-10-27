@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.example.webFluxMicro.PresonListController&apos; to &apos;PersonListController&apos;&#x0D;&#x0A;- Original project: &apos;webFluxMicro&apos;&#x0D;&#x0A;- Original element: &apos;com.example.webFluxMicro.PresonListController&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.webFluxMicro.PersonListController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PresonListController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.webFluxMicro{PresonListController.java[PresonListController" matchStrategy="1" name="PersonListController" qualified="false" references="true" similarDeclarations="false" stamp="1666871357044" textual="false" version="1.0"/>
+</session>

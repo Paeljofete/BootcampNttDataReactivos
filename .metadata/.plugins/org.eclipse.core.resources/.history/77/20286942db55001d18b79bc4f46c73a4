@@ -1,0 +1,41 @@
+package com.nttdata.ejercicioRxJava;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
+/**
+ * Prueba RxJava
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Observable<String> messageSender = Observable.just("Mensaje1", "Mensaje2", "Mensaje3");
+        
+        messageSender.subscribe(new Observer() {
+
+			@Override
+			public void onSubscribe(Disposable d) {
+				System.out.println("Observer1. Subscribed.");
+			}
+
+			@Override
+			public void onNext(Object t) {
+				
+			}
+
+			@Override
+			public void onError(Throwable e) {
+				
+			}
+
+			@Override
+			public void onComplete() {
+				
+			}
+        	
+        });
+    }
+}

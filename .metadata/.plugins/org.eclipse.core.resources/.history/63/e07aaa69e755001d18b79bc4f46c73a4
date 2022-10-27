@@ -1,0 +1,10 @@
+package com.example.webFlux;
+
+@RestController
+public class Controller {
+	
+	@GetMapping(path="/numbers", produces="text/event-stream")
+	public Flux
+	
+
+}

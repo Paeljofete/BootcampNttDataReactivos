@@ -1,0 +1,46 @@
+package com.example.webFluxMicro;
+
+import java.time.Duration;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import reactor.core.publisher.Flux;
+
+@RestController
+public class PersonListController {
+
+	@GetMapping("/peron-list1")
+	public Flux<Person> personList1(){
+		
+		Flux<Person> flux = Flux.just(new Person("Héctor", "FerSan", 6)).delayElements(Duration.ofSeconds(2));
+
+		return flux;
+		
+	}
+	
+	@GetMapping("/peron-list2")
+	public Flux<Person> personList2(){
+		
+		Flux<Person> flux = Flux.just(new Person("Beren", "San", 3)).delayElements(Duration.ofSeconds(2));
+
+		return flux;
+		
+	}
+	
+	@GetMapping("/peron-list3")
+	public Flux<Person> personList3(){
+		
+		Flux<Person> flux = Flux.just(new Person("Ciro", "Fer", 1)).delayElements(Duration.ofSeconds(2));
+		
+		return flux;
+	}
+	
+	@GetMapping("/peron-list4")
+	public Flux<Person> personList4(){
+		
+		Flux<Person> flux = Flux.just(new Person("Tuko", "Can", 7)).delayElements(Duration.ofSeconds(2));
+		
+		return flux;
+	}
+}
